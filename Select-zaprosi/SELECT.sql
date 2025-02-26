@@ -20,9 +20,20 @@ where imya like '%мой%' or imya like '%my%';
 
 --Задание 3
 --Количество исполнителей в каждом жанре.
-select 
+select z.imya,  count (i.ispolnitelid) count from zhanr z 
+join zhanrispol zi on z.zhanrid = zi.zhanrid
+join ispolnitel i on zi.ispolnitelid = i.ispolnitelid
+group by z.zhanrid
+--order by z.imya
+;
 --Количество треков, вошедших в альбомы 2019–2020 годов.
+select count (t.trackid) treckof from albom a
+join albom a on a.god_vipuska ( )
 
+
+where a.between 2019 and 2020
+
+;
 --Средняя продолжительность треков по каждому альбому.
 
 --Все исполнители, которые не выпустили альбомы в 2020 году.
