@@ -27,18 +27,25 @@ group by z.zhanrid
 --order by z.imya
 ;
 --Количество треков, вошедших в альбомы 2019–2020 годов.
-select count (t.trackid) treckof from albom a
-join albom a on a.god_vipuska ( )
-
-
-where a.between 2019 and 2020
-
+select count (t.trackid) count_track from track t
+join albom a on t.albomid = a.albomid
+where a.god_vipuska BETWEEN 2019 AND 2020
 ;
 --Средняя продолжительность треков по каждому альбому.
-
+select a.imya, avg (t.dlitelnost) SredProd from albom a
+join track t on a.albomid = t.albomid
+group by a.imya
+order by a.imya;
 --Все исполнители, которые не выпустили альбомы в 2020 году.
-
+select i.prozhvishe from ispolnitel i
+left join albom a on i.ispolnitelid = a.albomid and a.god_vipuska = '2020'
+where a.albomid is null;
 --Названия сборников, в которых присутствует конкретный исполнитель (выберите его сами).
+select distinct s.imya from sbornik s
+join track t on s.sbornikid = t.trackid
+join ispolnitel i on s.sbornikid = i.ispolnitelid
+where i.prozhvishe = 'ДДТ' 
 
+;
 
 
