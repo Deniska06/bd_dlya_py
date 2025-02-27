@@ -5,6 +5,9 @@ where god_vipuska = 2018;
 --Название и продолжительность самого длительного трека.
 select imya, dlitelnost from track
 order by dlitelnost desc limit 1;
+
+select imya, dlitelnost from track
+where dlitelnost = (select max (dlitelnost) from track);
 --Название треков, продолжительность которых не менее 3,5 минут.
 select imya, dlitelnost from track
 where dlitelnost < '00:03:50';
