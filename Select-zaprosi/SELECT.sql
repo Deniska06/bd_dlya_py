@@ -19,7 +19,15 @@ select distinct prozhvishe from ispolnitel
 where prozhvishe NOT LIKE '% %'; 
 --Название треков, которые содержат слово «мой» или «my».
 select imya from track
-where imya like '%мой%' or imya like '%my%';
+where imya ilike 'my %'
+or imya ilike '% my'
+or imya ilike '% my %'
+or imya ilike 'my'
+or imya ilike 'мой %'
+or imya ilike '% мой'
+or imya ilike '% мой %'
+or imya ilike 'мой'
+;
 
 --Задание 3
 --Количество исполнителей в каждом жанре.
@@ -40,15 +48,22 @@ join track t on a.albomid = t.albomid
 group by a.imya
 order by a.imya;
 --Все исполнители, которые не выпустили альбомы в 2020 году.
-select i.prozhvishe from ispolnitel i
-left join albom a on i.ispolnitelid = a.albomid and a.god_vipuska = '2020'
-where a.albomid is null;
+select prozhvishe from ispolnitel
+where ispolnitelid not in ( 
+	select i.ispolnitelid from ispolnitel i
+	join ispalbom il on i.ispolnitelid = il.ispolnitelid
+	join albom a on il.albomid = a.albomid
+	where a.god_vipuska = 2020
+);
 --Названия сборников, в которых присутствует конкретный исполнитель (выберите его сами).
 select distinct s.imya from sbornik s
-join track t on s.sbornikid = t.trackid
-join ispolnitel i on s.sbornikid = i.ispolnitelid
-where i.prozhvishe = 'ДДТ' 
-
+join sbortrack st on s.sbornikid = st.sbornikid
+join track t on st.trackid = t.trackid
+join albom a on t.albomid = a.albomid
+join ispalbom ia on a.albomid = ia.albomid
+join ispolnitel i on a.albomid = i.ispolnitelid
+where i.prozhvishe = 'Михаил Круг'
 ;
+
 
 
