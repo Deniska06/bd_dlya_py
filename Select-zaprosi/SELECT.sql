@@ -10,7 +10,7 @@ select imya, dlitelnost from track
 where dlitelnost = (select max (dlitelnost) from track);
 --Название треков, продолжительность которых не менее 3,5 минут.
 select imya, dlitelnost from track
-where dlitelnost < '00:03:50';
+where dlitelnost >= '00:03:30';
 --Названия сборников, вышедших в период с 2018 по 2020 год включительно.
 select imya, god_vipuska from sbornik
 where god_vipuska between 2018 and 2020;
