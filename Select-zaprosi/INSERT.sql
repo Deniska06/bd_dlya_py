@@ -167,6 +167,49 @@ VALUES(29, 'По прямой', '00:02:58', 10);
 INSERT INTO track 
 VALUES(30, 'Культурный путч', '00:04:20', 10);
 
+
+INSERT INTO track 
+VALUES(50, 'my own', '00:03:20', 10);
+
+INSERT INTO track 
+VALUES(51, 'own my', '00:03:20', 10);
+
+INSERT INTO track 
+VALUES(52, 'my', '00:03:20', 10);
+
+INSERT INTO track 
+VALUES(53, 'oh my god', '00:03:20', 10);
+
+INSERT INTO track 
+VALUES(54, 'myself', '00:03:20', 10);
+
+INSERT INTO track 
+VALUES(55, 'by myself', '00:03:20', 10);
+
+INSERT INTO track 
+VALUES(56, 'bemy self', '00:03:20', 10);
+
+INSERT INTO track 
+VALUES(57, 'myself by', '00:03:20', 10);
+
+INSERT INTO track 
+VALUES(58, 'by myself by', '00:03:20', 10);
+
+INSERT INTO track 
+VALUES(59, 'beemy', '00:03:20', 10);
+
+INSERT INTO track 
+VALUES(60, 'premyne', '00:03:20', 10);
+
+INSERT INTO track 
+VALUES(61, 'Мой мир', '00:03:20', 10);
+
+INSERT INTO track 
+VALUES(62, 'Мир мой', '00:03:20', 10);
+
+INSERT INTO track 
+VALUES(63, 'Мирмой', '00:03:20', 10);
+
 --Добавление Сборника
 INSERT INTO sbornik 
 VALUES(1, 'Осень ', 2011);
