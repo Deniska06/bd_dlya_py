@@ -64,6 +64,3 @@ join ispalbom ia on a.albomid = ia.albomid
 join ispolnitel i on a.albomid = i.ispolnitelid
 where i.prozhvishe = 'Михаил Круг'
 ;
-
-
-
