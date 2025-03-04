@@ -28,10 +28,10 @@ cur = conn.cursor()
 
 def sozdanie_db(conn):
     # with conn.cursor() as cur:
-        # cur.execute("""
-        # drop table telefon;
-        # drop table klient;
-        # """)
+    cur.execute("""
+        drop table telefon;
+        drop table klient;
+        """)
     cur.execute("""
         create table if not exists klient(
             id integer primary key,
@@ -41,7 +41,7 @@ def sozdanie_db(conn):
             )
         """)
     # print(cur.fetchone())
-    conn.commit()
+    # conn.commit()
     print("Таблица успешно созданы.")
     cur.execute("""
             create table if not exists telefon (
@@ -52,10 +52,10 @@ def sozdanie_db(conn):
             )
         """)
     # print(cur.fetchone())
-conn.commit()
+    conn.commit()
 
-# with conn.cursor() as cur:
+with conn.cursor() as cur:
 #     # conn.commit()
-#     sozdanie_db(conn)
+    sozdanie_db(conn)
 conn.close()
-# print("Таблицы успешно созданы.")
+print("Таблицы успешно созданы.")
