@@ -1,0 +1,4 @@
+
+t.me/U4enie_svet_bot
+7666479394:AAGJdD8usQQVYjDxWyNLYjU6ZTjaSKqbl6I
+
